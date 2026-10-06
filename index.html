@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistem Pencatatan Logistik</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-start sm:items-center justify-center p-3">
+
+<!-- LOGIN -->
+<div id="loginSection" class="bg-white p-6 rounded-2xl shadow-lg w-full max-w-md mt-10 sm:mt-0 space-y-3">
+  <h2 class="text-2xl font-bold text-gray-800 text-center">Login Petugas</h2>
+  <input id="username" autocapitalize="none" placeholder="Username" class="w-full p-3 border rounded-lg">
+  <input id="password" type="password" placeholder="Password" class="w-full p-3 border rounded-lg">
+  <p id="loginMsg" class="text-sm text-red-600"></p>
+  <button id="loginBtn" onclick="handleLogin()" class="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold disabled:opacity-60">Masuk</button>
+</div>
+
+<!-- APLIKASI -->
+<div id="appSection" class="hidden bg-white p-5 rounded-2xl shadow-lg w-full max-w-lg">
+  <div class="flex justify-between items-center mb-4 border-b pb-2">
+    <h2 class="text-lg font-bold text-gray-800">Input Logistik</h2>
+    <div class="flex items-center gap-2 flex-wrap justify-end">
+      <span id="counter" class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded font-semibold">0 scan</span>
+      <span id="loggedUser" class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"></span>
+      <button id="adminBtn" onclick="toggleAdmin()" class="hidden text-xs bg-purple-600 text-white px-2 py-1 rounded">Kelola User</button>
